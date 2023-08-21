@@ -9,10 +9,10 @@ export function PostsList() {
         <div>
             {postsContext?.posts.map((post) => (
                 <PostItem 
-                    key={post.id}
-                    postId={post.id}
-                    postTitle={post.title}
-                    postBody={post.body}
+                    key={post.postId}
+                    postId={post.postId}
+                    postTitle={post.postTitle}
+                    postBody={post.postBody}
                 />
             ))}
         </div>

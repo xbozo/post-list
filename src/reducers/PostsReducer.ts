@@ -1,4 +1,4 @@
-import { PostProps } from "@/@types/Post";
+import { Post } from "@/@types/Post";
 
 type AddAction = {
     type: 'addPost';
@@ -30,23 +30,23 @@ type PostActions =
     | RemoveAction
 
     
-export function PostsReducer(posts: PostProps[], action: PostActions) {
+export function PostsReducer(posts: Post[], action: PostActions) {
     switch(action.type) {
         case 'addPost':
             return [...posts, {
-                id: posts.length,
-                title: action.payload.title,
-                body: action.payload.body,
+                postId: posts.length,
+                postTitle: action.payload.title,
+                postBody: action.payload.body,
             }]
 
         case 'removePost':
-            return posts.filter((post) => post.id !== action.payload.id)
+            return posts.filter((post) => post.postId !== action.payload.id)
         
         case 'editPostText':
             return posts.map(post => {
-                if (post.id === action.payload.id) {
-                    post.title = action.payload.newTitle
-                    post.body = action.payload.newBody
+                if (post.postId === action.payload.id) {
+                    post.postTitle = action.payload.newTitle
+                    post.postBody = action.payload.newBody
                 }
                 return post
             })

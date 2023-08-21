@@ -1,5 +1,5 @@
-export type PostProps = {
-    title: string
-    body: string
-    id: number
+export type Post = {
+    postTitle: string
+    postBody: string
+    postId: number
 }

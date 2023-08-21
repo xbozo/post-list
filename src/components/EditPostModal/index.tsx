@@ -1,13 +1,9 @@
+import { Post } from "@/@types/Post";
 import { PostsContext } from "@/contexts/PostsContext";
 import { useContext, useEffect, useState } from "react";
 
-type PostItemProps = {
-    postId: number;
-    postTitle: string;
-    postBody: string;
-};
 
-export function EditPostModal({ postId, postTitle, postBody }: PostItemProps) {
+export function EditPostModal({ postId, postTitle, postBody }: Post) {
     const [editedTitleText, setEditedTitleText] = useState(postTitle);
     const [editedBodyText, setEditedBodyText] = useState(postBody);
 

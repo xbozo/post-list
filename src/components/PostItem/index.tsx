@@ -1,14 +1,12 @@
+import { Post } from "@/@types/Post";
+
 import { PostsContext } from "@/contexts/PostsContext";
 import { useContext } from "react";
+
 import { EditPostModal } from "../EditPostModal";
 
-type PostItemProps = {
-    postId: number;
-    postTitle: string;
-    postBody: string;
-};
 
-export function PostItem({ postId, postTitle, postBody }: PostItemProps) {
+export function PostItem({ postId, postTitle, postBody }: Post) {
     const postsContext = useContext(PostsContext);
 
     function handleEditPostModal() {
