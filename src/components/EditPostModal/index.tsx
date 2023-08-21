@@ -36,7 +36,7 @@ export function EditPostModal({ postId, postTitle, postBody }: PostItemProps) {
 
     return (
         <div className="fixed top-0 left-0 w-full h-full bg-black/70 flex justify-center items-center">
-            <div className="bg-transparent max-w-4xl w-full max-h-[896px] h-full p-28 overflow-hidden text-center flex flex-col gap-3 justify-center">
+            <div className="container bg-transparent max-w-4xl w-full max-h-full h-full p-7 overflow-hidden text-center flex flex-col gap-3 justify-center sm:p-28">
                 <div>
                     <input 
                         value={editedTitleText}
@@ -51,7 +51,7 @@ export function EditPostModal({ postId, postTitle, postBody }: PostItemProps) {
                     placeholder="Digite o novo texto"
                     className="p-2 max-h-[350px] h-full w-full text-black resize-none focus:outline-none rounded"
                 />
-                <div className="flex w-full gap-3">
+                <div className="container flex flex-col w-full gap-3 sm:flex-row">
                     <button 
                         onClick={() => postsContext?.setEditPostModal(false)}
                         className="py-2 px-4 bg-red-500 rounded border-0 flex-1 ease-in-out duration-200 hover:bg-red-600"

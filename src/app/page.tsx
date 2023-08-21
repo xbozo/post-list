@@ -8,7 +8,7 @@ import { PostsProvider } from "@/contexts/PostsContext"
 export default function Home() {
   return (
     <PostsProvider>
-      <div className="container mt-10 mx-auto">
+      <div className="container mt-10 mx-auto p-7">
         <Header />
         <AddPost />
         <PostsList />
